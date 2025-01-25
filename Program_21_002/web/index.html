@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Program 2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #formDiv{
+                max-width: 500px;
+                margin: auto;
+                border: 3px solid #73AD21;
+                padding: 50px;
+            }
+            
+     
+        </style>
+    </head>
+    <body>
+        <form id="formDiv" action="operator.jsp" method="post">
+            <lable for="num1">Enter first number:</lable>
+            <input type="number" name="num1" id="num1" required>
+            
+            <br><br><!-- comment -->
+            <lable for="num2">Enter second number:</lable>
+            <input type="number" name="num2" id="num2" required> <br><br> 
+            
+            <label> Select an operation:</label><br>
+            <input type="radio" id="add" name="operation" value="add" required>
+            <label for="add">Addition</label>
+            
+            <input type="radio" id="sub" name="operation" value="sub" required><!-- comment -->
+            <label for="sub">Subtraction</label>
+            
+            <input type="radio" id="mul" name="operation" value="mul" required> 
+            <label for="mul">Multiplication</label> <br><br> 
+            
+            <input type="submit" id="submitButtonId">
+        </form>
+    </body>
+</html>
