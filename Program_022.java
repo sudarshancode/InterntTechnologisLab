@@ -1,3 +1,4 @@
+//Write a java program to merge two sorted arrays
 import java.util.Scanner;
 
 public class Program_022 {
