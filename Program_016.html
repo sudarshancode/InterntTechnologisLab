@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program_016</title>
+</head>
+<body>
+    <img id="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Sunflower_from_Silesia2.jpg/1280px-Sunflower_from_Silesia2.jpg" width="200px" height="200px" >
+    <h1 id="heading"></h1>
+    
+    <script>
+        const img=document.getElementById("image");
+        const heading=document.getElementById("heading");
+
+        heading.innerHTML=`Width:${img.width}px Height:${img.height}px`;
+
+    </script>
+</body>
+</html>
