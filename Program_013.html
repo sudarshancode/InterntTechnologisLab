@@ -1,0 +1,35 @@
+<!--Write a javascript to implement static password protection-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <lable for="username" >Enter username</lable>
+    <input  id="username" type="text" name="username">
+
+    <lable for="password" >Enter Password</lable>
+    <input  id="password" type="password" name="password">
+
+    <div id="error"></div>
+    <button id="loginButton" onclick="validPassword()">Login</button>
+    <script>
+        function validPassword(){
+            const staticPassword="system@123";
+            const username=document.getElementById("username").value;
+            const password=document.getElementById("password").value;
+
+            const error=document.getElementById("error");
+
+            if(password === staticPassword){
+                alert("Login Successfull");
+            }else{
+                error.textContent="Invalid Password";
+            }
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program_014</title>
+</head>
+<body>
+    <form id="myForm">
+        <label for="roll">Enter Roll number:</label>
+        <input type="number" id="roll" name="roll"><br>
+        <div id="errRoll" style="color: red;"></div>
+
+        <label for="name">Enter Name:</label>
+        <input type="text" id="name" name="name"><br>
+        <div id="errName" style="color: red;"></div>
+
+        <label for="dob">Enter date of birth:</label>
+        <input type="date" id="dob" name="dob"><br>
+        <div id="errDate" style="color: red;"></div>
+
+        <button type="button" onclick="validateForm()">Submit</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            let flag = true;
+
+            const roll = document.getElementById("roll").value;
+            const name = document.getElementById("name").value;
+            const dob = document.getElementById("dob").value;
+
+            // Clear previous errors
+            document.getElementById("errRoll").textContent = "";
+            document.getElementById("errName").textContent = "";
+            document.getElementById("errDate").textContent = "";
+
+            // Validate roll number (7-digit numeric)
+            if (!/^\d{7}$/.test(roll)) {
+                document.getElementById("errRoll").textContent = "Enter roll number in 7-digit format";
+                flag = false;
+            }
+
+            // Validate name (Only alphabets and spaces)
+            if (!/^[a-zA-Z\s]+$/.test(name)) {
+                document.getElementById("errName").textContent = "Enter a valid name (letters only)";
+                flag = false;
+            }
+
+            // Validate date of birth (must be selected)
+            if (!dob) {
+                document.getElementById("errDate").textContent = "Enter date of birth";
+                flag = false;
+            }
+
+            if (flag) {
+                alert("Form submitted successfully!");
+            }
+        }
+    </script>
+</body>
+</html>
