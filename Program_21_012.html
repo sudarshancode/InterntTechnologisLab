@@ -1,0 +1,45 @@
+<!--Write a javascript program to change color using setTimeOut and move image using setInterval-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program_12</title>
+</head>
+<body>
+    <h1 id="text">Color Change text</h1>
+    <img id="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Sunflower_from_Silesia2.jpg/1280px-Sunflower_from_Silesia2.jpg" width="200px" height="200px" style="position: absolute;">
+
+    <script>
+        let text=document.getElementById("text");
+        const color=['red','green','yellow','black'];
+        let colorIndex=0;
+        function colorChange(){
+            if(colorIndex<color.length){
+                text.style.color=color[colorIndex];
+                colorIndex++;
+                /*
+                if(colorIndex==color.length){
+                    colorIndex=0;
+                }*/
+                setTimeout(colorChange,2000);
+            }
+        }
+        colorChange();
+
+        const imageElement=document.getElementById("image");
+        let position=0;
+        let speed=5;
+        function moveImage(){
+            position=position+speed;
+            imageElement.style.transform=`translateX(${position}px)`;
+
+            if(position >window.innerWidth){
+                position=-imageElement.width;
+            }
+        }
+        setInterval(moveImage,100);
+    </script>
+</body>
+</html>
